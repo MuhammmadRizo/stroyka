@@ -91,20 +91,6 @@ export default function Footer() {
             <span className={styles.footerBottom__dev}>
               Разработка KUKURUZ STUDIO
             </span>
-            <a
-              href="sms:+998996402205?body=Salom%20men%20sizdan%20mahsulot%20buyurtma
-%20qilmoqchiman"
-            >
-              {" "}
-              Telefon orqali xabar yuborish{" "}
-            </a>
-            <a
-              href="https://wa.me/+998996402205?body=Salom%20men%20sizdan%20mahsulot%20buyurtma
-%20qilmoqchiman"
-            >
-              {" "}
-              Telefon orqali xabar yuborish{" "}
-            </a>
           </div>
         </div>
       </div>
