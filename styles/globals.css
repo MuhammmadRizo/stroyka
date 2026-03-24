@@ -1,0 +1,239 @@
+/* ============================================================
+   GLOBAL VARIABLES
+   ============================================================ */
+:root {
+  --yellow: #f5c800;
+  --yellow-hover: #e0b400;
+  --yellow-active: #c9a100;
+  --yellow-light: #fff9d6;
+
+  --gray-900: #1a1a1a;
+  --gray-800: #2d2d2d;
+  --gray-700: #3d3d3d;
+  --gray-600: #555555;
+  --gray-500: #777777;
+  --gray-400: #999999;
+  --gray-300: #cccccc;
+  --gray-200: #e5e5e5;
+  --gray-100: #f5f5f5;
+  --gray-50:  #fafafa;
+
+  --white: #ffffff;
+
+  --font: "Inter", "Segoe UI", Arial, sans-serif;
+
+  --container: 1200px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  --shadow-card: 0 1px 4px rgba(0,0,0,0.08);
+  --shadow-card-hover: 0 4px 16px rgba(0,0,0,0.12);
+  --transition: 0.18s ease;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font);
+  color: var(--gray-900);
+  background: var(--gray-100);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ============================================================
+   LAYOUT UTILITY
+   ============================================================ */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ============================================================
+   SECTION HEADERS
+   ============================================================ */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.section-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--gray-600);
+  transition: color var(--transition);
+}
+
+.section-link:hover {
+  color: var(--gray-900);
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn-yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: var(--yellow);
+  color: var(--gray-900);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 9px 18px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition);
+  white-space: nowrap;
+}
+
+.btn-yellow:hover {
+  background: var(--yellow-hover);
+}
+
+.btn-yellow:active {
+  background: var(--yellow-active);
+}
+
+.btn-yellow-sm {
+  padding: 7px 12px;
+  font-size: 12px;
+  width: 100%;
+}
+
+/* ============================================================
+   PRODUCT CARD
+   ============================================================ */
+.product-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  transition: box-shadow var(--transition);
+  cursor: pointer;
+}
+
+.product-card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: var(--yellow);
+  color: var(--gray-900);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  z-index: 1;
+}
+
+.product-card__image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: var(--gray-50);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition);
+}
+
+.product-card:hover .product-card__image img {
+  transform: scale(1.04);
+}
+
+.product-card__name {
+  font-size: 12px;
+  color: var(--gray-700);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  flex: 1;
+  min-height: 50px;
+}
+
+.product-card__price {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.product-card__old-price {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--gray-400);
+  text-decoration: line-through;
+  margin-top: 1px;
+}
+
+/* ============================================================
+   RESPONSIVE HELPERS
+   ============================================================ */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 18px;
+  }
+}
